@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237A1818'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='Georgia,serif' font-size='30' fill='white'%3EAS%3C/text%3E%3C/svg%3E"/>
   <title>You're Registered! – Arthashastra Webinar | CA Avinash Shukla</title>
   <meta name="description" content="Thank you for registering! Your complete guide to attending the Kautilya Arthashastra Webinar with CA Avinash Shukla." />
   <meta name="robots" content="noindex, nofollow" />
@@ -121,6 +122,272 @@
       display: flex; align-items: center; gap: 7px;
     }
     .success-chip svg { width: 14px; height: 14px; fill: var(--gold-light); flex-shrink: 0; }
+
+    .whatsapp-prompt {
+      margin-top: 28px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(212,168,75,0.28);
+      border-radius: 18px;
+      padding: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(8px);
+    }
+    .whatsapp-prompt-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+    }
+    .whatsapp-prompt h3 {
+      color: var(--white);
+      font-size: clamp(22px, 3vw, 30px);
+      margin-bottom: 8px;
+    }
+    .whatsapp-prompt p {
+      color: rgba(250,244,232,0.82);
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 auto 18px;
+      max-width: 620px;
+    }
+    .whatsapp-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .whatsapp-benefit {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--beige-light);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .whatsapp-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 16px 30px rgba(22,163,74,0.26);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 34px rgba(22,163,74,0.3);
+    }
+    .whatsapp-btn:focus-visible,
+    .whatsapp-secondary-btn:focus-visible,
+    .whatsapp-modal-close:focus-visible {
+      outline: 3px solid rgba(212,168,75,0.55);
+      outline-offset: 3px;
+    }
+    .whatsapp-btn svg,
+    .whatsapp-secondary-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .whatsapp-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(201,168,124,0.35);
+      color: var(--beige-light);
+      background: transparent;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .whatsapp-secondary-btn:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(212,168,75,0.45);
+    }
+    .whatsapp-status {
+      font-size: 13px;
+      color: rgba(250,244,232,0.76);
+      min-height: 20px;
+    }
+    .whatsapp-status.is-success { color: #bbf7d0; }
+    .whatsapp-inline-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: rgba(250,244,232,0.65);
+    }
+
+    .whatsapp-sticky {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: min(360px, calc(100vw - 24px));
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--beige-light);
+      box-shadow: 0 18px 38px rgba(26,10,0,0.16);
+      z-index: 80;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    }
+    .whatsapp-sticky.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .whatsapp-sticky h4 {
+      font-size: 18px;
+      color: var(--maroon-dark);
+      margin-bottom: 8px;
+    }
+    .whatsapp-sticky p {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .whatsapp-sticky .whatsapp-actions {
+      justify-content: flex-start;
+    }
+    .whatsapp-sticky .whatsapp-btn,
+    .whatsapp-sticky .whatsapp-secondary-btn {
+      min-height: 46px;
+      padding: 12px 18px;
+      font-size: 13px;
+    }
+    .whatsapp-dismiss {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--text-light);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .whatsapp-modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(26,10,0,0.58);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+      z-index: 120;
+    }
+    .whatsapp-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .whatsapp-modal-card {
+      width: min(560px, 100%);
+      background: var(--white);
+      border-radius: 24px;
+      border: 1px solid var(--beige-light);
+      box-shadow: 0 28px 60px rgba(26,10,0,0.22);
+      padding: 28px;
+      position: relative;
+    }
+    .whatsapp-modal-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .whatsapp-modal-card h3 {
+      font-size: clamp(24px, 3vw, 32px);
+      color: var(--maroon-dark);
+      margin-bottom: 10px;
+    }
+    .whatsapp-modal-card p {
+      color: var(--text-mid);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .whatsapp-modal-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--text-mid);
+      font-size: 14px;
+    }
+    .whatsapp-modal-list span {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .whatsapp-modal-list span::before {
+      content: '•';
+      color: var(--green);
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 1px;
+    }
+    .whatsapp-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: var(--parchment);
+      color: var(--maroon);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .whatsapp-modal-note {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 14px;
+    }
 
     /* ===== SECTIONS ===== */
     .section { padding: 64px 0; }
@@ -377,6 +644,11 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 700px) {
+      .whatsapp-prompt { padding: 20px; }
+      .whatsapp-prompt h3 { font-size: 24px; }
+      .whatsapp-actions { flex-direction: column; }
+      .whatsapp-btn,
+      .whatsapp-secondary-btn { width: 100%; }
       .detail-grid { grid-template-columns: 1fr; }
       .detail-cell:nth-child(odd) { border-right: none; }
       .detail-cell { border-bottom: 1px solid var(--parchment-dark) !important; }
@@ -389,12 +661,25 @@
       .track-dot { width: 36px; height: 36px; font-size: 12px; }
       .track-label { font-size: 10px; max-width: 60px; }
       .footer-inner { flex-direction: column; }
+      .whatsapp-sticky {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        width: auto;
+        border-radius: 16px;
+      }
+      .whatsapp-sticky .whatsapp-actions { flex-direction: column; }
+      .whatsapp-sticky .whatsapp-btn,
+      .whatsapp-sticky .whatsapp-secondary-btn { width: 100%; }
+      .whatsapp-modal-card { padding: 24px 20px; }
     }
     @media (max-width: 480px) {
       .success-banner { padding: 44px 0 36px; }
       .section { padding: 48px 0; }
       .detail-card-header { padding: 18px 22px; }
       .detail-cell { padding: 18px 20px; }
+      .whatsapp-prompt { margin-top: 22px; }
+      .whatsapp-benefits { justify-content: flex-start; }
     }
 
     /* ===== ANIMATION ===== */
@@ -444,11 +729,11 @@
       <div class="success-chips">
         <div class="success-chip">
           <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          Starts March 19, 2026
+          Starts April 4, 2026
         </div>
         <div class="success-chip">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l4.25 2.52.75-1.23-3.5-2.08V7z"/></svg>
-          7:30 PM – 9:00 PM IST
+          6:00 PM – 8:00 PM IST
         </div>
         <div class="success-chip">
           <svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>
@@ -456,8 +741,30 @@
         </div>
         <div class="success-chip">
           <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          All 6 Sessions Included
+          All 4 Sessions Included
         </div>
+      </div>
+      <div class="whatsapp-prompt animate-in" id="whatsappPrompt">
+        <span class="whatsapp-prompt-label">Required Next Step</span>
+        <h3>Join The Private WhatsApp Group Before You Exit</h3>
+        <p>All important reminders, Zoom link updates, session alerts, and last-minute support will be shared here first. Join now so you do not miss the live sessions.</p>
+        <div class="whatsapp-benefits" aria-hidden="true">
+          <span class="whatsapp-benefit">Session reminders</span>
+          <span class="whatsapp-benefit">Zoom link updates</span>
+          <span class="whatsapp-benefit">Support announcements</span>
+        </div>
+        <div class="whatsapp-actions">
+          <a href="https://chat.whatsapp.com/EyvP8mc3DQe8yJOox8qNlN?mode=gi_t" class="whatsapp-btn js-whatsapp-join" target="_blank" rel="noopener noreferrer" data-source="hero">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.13-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.29-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.11-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26s.97 2.63 1.11 2.81c.13.18 1.88 2.86 4.54 4.02.63.27 1.13.43 1.51.55.63.2 1.21.17 1.66.1.51-.08 1.6-.65 1.83-1.29.22-.63.22-1.18.16-1.29-.07-.11-.25-.18-.52-.31zM16.01 3.2c-7.06 0-12.78 5.72-12.78 12.78 0 2.24.58 4.42 1.69 6.34L3 29l6.88-1.8c1.84 1 3.92 1.52 6.05 1.52h.01c7.06 0 12.79-5.72 12.79-12.78S23.07 3.2 16.01 3.2zm0 23.38h-.01c-1.9 0-3.76-.51-5.38-1.49l-.39-.23-4.08 1.07 1.09-3.97-.25-.41a10.55 10.55 0 01-1.62-5.63c0-5.83 4.75-10.58 10.59-10.58 2.82 0 5.47 1.1 7.46 3.1 1.99 1.99 3.09 4.64 3.09 7.46-.01 5.83-4.76 10.58-10.59 10.58z"/></svg>
+            Join WhatsApp Group Now
+          </a>
+          <button type="button" class="whatsapp-secondary-btn" id="whatsappReminderButton">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l4.25 2.52.75-1.23-3.5-2.08V7z"/></svg>
+            Remind Me Before I Leave
+          </button>
+        </div>
+        <div class="whatsapp-status" id="whatsappInlineStatus" aria-live="polite"></div>
+        <div class="whatsapp-inline-note">Recommended: join now before you start reviewing the setup checklist below.</div>
       </div>
     </div>
   </section>
@@ -488,7 +795,7 @@
         </div>
         <div class="track-step">
           <div class="track-dot">5</div>
-          <div class="track-label">Complete All 6 Days</div>
+          <div class="track-label">Complete All 4 Days</div>
         </div>
         <div class="track-step">
           <div class="track-dot">6</div>
@@ -507,8 +814,8 @@
 
       <div class="detail-card animate-in">
         <div class="detail-card-header">
-          <h3>Kautilya Arthashastra — 6-Day Strategy Program</h3>
-          <p>Hosted by CA Avinash Shukla &bull; March 19–29, 2026</p>
+          <h3>Kautilya Arthashastra — 4-Day Strategy Program</h3>
+          <p>Hosted by CA Avinash Shukla &bull; April 4, 11, 18 &amp; 25, 2026</p>
         </div>
         <div class="detail-grid">
           <!-- Dates -->
@@ -519,12 +826,10 @@
             <div>
               <div class="detail-label">Session Dates</div>
               <div class="date-chips">
-                <span class="date-chip">Mar 19</span>
-                <span class="date-chip">Mar 21</span>
-                <span class="date-chip">Mar 23</span>
-                <span class="date-chip">Mar 25</span>
-                <span class="date-chip">Mar 27</span>
-                <span class="date-chip">Mar 29</span>
+                <span class="date-chip">Apr 4</span>
+                <span class="date-chip">Apr 11</span>
+                <span class="date-chip">Apr 18</span>
+                <span class="date-chip">Apr 25</span>
               </div>
               <div class="detail-note">Every alternate day (Mon/Wed/Fri)</div>
             </div>
@@ -536,8 +841,8 @@
             </div>
             <div>
               <div class="detail-label">Session Time</div>
-              <div class="detail-value">7:30 PM – 9:00 PM</div>
-              <div class="detail-note">Indian Standard Time (IST) &bull; 90 minutes per session</div>
+              <div class="detail-value">6:00 PM – 8:00 PM</div>
+              <div class="detail-note">Indian Standard Time (IST) &bull; 2 hours per session</div>
             </div>
           </div>
           <!-- Platform -->
@@ -583,7 +888,7 @@
         <div class="info-box-icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#B8873A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
-        <p><strong>Important:</strong> Your Zoom joining link will be shared via email and WhatsApp before Session 1 (March 19). Please ensure you have sent your payment screenshot to confirm. Save the link — it may be the same link for all 6 sessions or session-specific links will be shared individually.</p>
+        <p><strong>Important:</strong> Your Zoom joining link will be shared via email and WhatsApp before Session 1 (April 4). Please ensure you have sent your payment screenshot to confirm. Save the link — it may be the same link for all 4 sessions or session-specific links will be shared individually.</p>
       </div>
     </div>
   </section>
@@ -593,7 +898,7 @@
     <div class="container">
       <span class="section-label">Before You Begin</span>
       <h2 class="section-title">Tech Setup Checklist</h2>
-      <p class="section-sub">Get your tech ready before March 19 to ensure zero disruptions on the day.</p>
+      <p class="section-sub">Get your tech ready before April 4 to ensure zero disruptions on the day.</p>
 
       <div class="tech-grid">
         <div class="tech-card">
@@ -659,7 +964,7 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Choose a quiet, dedicated room <span class="priority-badge priority-must">Must</span></span>
-              <span class="check-desc">Find a room where you will not be interrupted. Inform family members / roommates that you are in a live class from 7:30–9:00 PM and you should not be disturbed.</span>
+              <span class="check-desc">Find a room where you will not be interrupted. Inform family members / roommates that you are in a live class from 6:00–8:00 PM and you should not be disturbed.</span>
             </div>
           </li>
           <li>
@@ -687,7 +992,7 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Good lighting in the room <span class="priority-badge priority-should">Should</span></span>
-              <span class="check-desc">Avoid attending in a dark room. Proper lighting keeps you alert and reduces eye strain. Natural light is best; a bright desk lamp works well at 7:30 PM.</span>
+              <span class="check-desc">Avoid attending in a dark room. Proper lighting keeps you alert and reduces eye strain. Natural light is best; a bright desk lamp works well at 6:00 PM.</span>
             </div>
           </li>
           <li>
@@ -712,7 +1017,7 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Put your phone on Silent / DND mode <span class="priority-badge priority-must">Must</span></span>
-              <span class="check-desc">Enable "Do Not Disturb" on your phone. Calls, WhatsApp messages, Instagram notifications — everything can wait 90 minutes. Your growth cannot.</span>
+              <span class="check-desc">Enable "Do Not Disturb" on your phone. Calls, WhatsApp messages, Instagram notifications — everything can wait 2 hours. Your growth cannot.</span>
             </div>
           </li>
           <li>
@@ -739,7 +1044,7 @@
           <li>
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
-              <span class="check-title">Inform your contacts you're unavailable 7:30–9 PM on session days <span class="priority-badge priority-should">Should</span></span>
+              <span class="check-title">Inform your contacts you're unavailable 6:00–8 PM on session days <span class="priority-badge priority-should">Should</span></span>
               <span class="check-desc">Send a quick WhatsApp status or message to close contacts on session days. Most people are very understanding when told upfront.</span>
             </div>
           </li>
@@ -758,7 +1063,7 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Keep a dedicated notebook + pen ready <span class="priority-badge priority-must">Must</span></span>
-              <span class="check-desc">Handwritten notes improve retention by 34% compared to typing. Use a fresh notebook exclusively for this 6-day program. Label it "Arthashastra – 2026."</span>
+              <span class="check-desc">Handwritten notes improve retention by 34% compared to typing. Use a fresh notebook exclusively for this 4-day program. Label it "Arthashastra – 2026."</span>
             </div>
           </li>
           <li>
@@ -772,14 +1077,14 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Join the Zoom call 5 minutes early <span class="priority-badge priority-must">Must</span></span>
-              <span class="check-desc">Join by 7:25 PM to test audio, settle in, and be mentally ready when CA Avinash starts. Latecomers often miss the most important framing of the session.</span>
+              <span class="check-desc">Join by 5:55 PM to test audio, settle in, and be mentally ready when CA Avinash starts. Latecomers often miss the most important framing of the session.</span>
             </div>
           </li>
           <li>
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
-              <span class="check-title">Set a calendar reminder for all 6 session dates <span class="priority-badge priority-must">Must</span></span>
-              <span class="check-desc">Add reminders for March 19, 21, 23, 25, 27 &amp; 29 at 7:15 PM IST. Set a 15-minute advance reminder so you're never caught off-guard.</span>
+              <span class="check-title">Set a calendar reminder for all 4 session dates <span class="priority-badge priority-must">Must</span></span>
+              <span class="check-desc">Add reminders for April 4, 11, 18 &amp; 25 at 5:45 PM IST. Set a 15-minute advance reminder so you're never caught off-guard.</span>
             </div>
           </li>
           <li>
@@ -793,7 +1098,7 @@
             <div class="check-box" role="checkbox" aria-checked="false" tabindex="0"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div class="check-text">
               <span class="check-title">Have dinner before 7:00 PM on session days <span class="priority-badge priority-nice">Nice</span></span>
-              <span class="check-desc">A heavy digestion process competes with mental focus. Eat light and early so your mind is sharp and alert for the 7:30 PM session.</span>
+              <span class="check-desc">A heavy digestion process competes with mental focus. Eat light and early so your mind is sharp and alert for the 6:00 PM session.</span>
             </div>
           </li>
         </ul>
@@ -806,7 +1111,7 @@
     <div class="container">
       <span class="section-label">Quick Reference</span>
       <h2 class="section-title">Do's &amp; Don'ts on Session Days</h2>
-      <p class="section-sub">Follow these for all 6 sessions to get the maximum value.</p>
+      <p class="section-sub">Follow these for all 4 sessions to get the maximum value.</p>
 
       <div class="dos-donts">
         <div class="dos-card">
@@ -815,7 +1120,7 @@
             Do This
           </h4>
           <ul>
-            <li>Join 5 minutes before 7:30 PM</li>
+            <li>Join 5 minutes before 6:00 PM</li>
             <li>Use earphones / headphones</li>
             <li>Sit upright in a proper chair</li>
             <li>Keep a notebook and pen ready</li>
@@ -902,7 +1207,7 @@
     <blockquote>
       "A person should not be too honest. Straight trees are cut first and honest people are screwed first."
     </blockquote>
-    <div class="quote-attribution">— Kautilya, Arthashastra &nbsp;|&nbsp; Discover the full depth in your 6-day program</div>
+    <div class="quote-attribution">— Kautilya, Arthashastra &nbsp;|&nbsp; Discover the full depth in your 4-day program</div>
   </div></div>
 
   <!-- ====== WHAT HAPPENS NEXT ====== -->
@@ -930,8 +1235,8 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </div>
           <div style="padding-top:8px;">
-            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">A Day Before March 19 — Zoom Link Arrives</div>
-            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">You'll receive the Zoom joining link via email and/or WhatsApp. Check your spam folder if it doesn't appear. The link may work for all 6 sessions.</div>
+            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">A Day Before April 4 — Zoom Link Arrives</div>
+            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">You'll receive the Zoom joining link via email and/or WhatsApp. Check your spam folder if it doesn't appear. The link may work for all 4 sessions.</div>
           </div>
         </div>
 
@@ -940,8 +1245,8 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5H11v6l4.25 2.52.75-1.23-3.5-2.08V7z"/></svg>
           </div>
           <div style="padding-top:8px;">
-            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">March 19, 7:25 PM — Join 5 Mins Early</div>
-            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">Open Zoom, join the meeting at 7:25 PM. Test your audio. Find your seat. Be ready when CA Avinash begins precisely at 7:30 PM.</div>
+            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">April 4, 5:55 PM — Join 5 Mins Early</div>
+            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">Open Zoom, join the meeting at 5:55 PM. Test your audio. Find your seat. Be ready when CA Avinash begins precisely at 6:00 PM.</div>
           </div>
         </div>
 
@@ -950,13 +1255,48 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
           </div>
           <div style="padding-top:8px;">
-            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">March 29, 9:00 PM — Transformation Complete</div>
-            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">After 6 sessions, you'll have a strategic framework from Arthashastra that you can apply to wealth, leadership, and influence — for the rest of your life.</div>
+            <div style="font-weight:700;font-size:15px;color:var(--text-dark);">April 25, 8:00 PM — Transformation Complete</div>
+            <div style="font-size:14px;color:var(--text-light);margin-top:3px;">After 4 sessions, you'll have a strategic framework from Arthashastra that you can apply to wealth, leadership, and influence — for the rest of your life.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <aside class="whatsapp-sticky" id="whatsappSticky" aria-label="WhatsApp reminder">
+    <button type="button" class="whatsapp-dismiss" id="whatsappStickyDismiss" aria-label="Dismiss WhatsApp reminder">×</button>
+    <h4>Still need the WhatsApp group?</h4>
+    <p>Join before you leave this page so you receive reminders, joining updates, and support messages in one place.</p>
+    <div class="whatsapp-actions">
+      <a href="https://chat.whatsapp.com/EyvP8mc3DQe8yJOox8qNlN?mode=gi_t" class="whatsapp-btn js-whatsapp-join" target="_blank" rel="noopener noreferrer" data-source="sticky">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.13-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.29-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.11-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26s.97 2.63 1.11 2.81c.13.18 1.88 2.86 4.54 4.02.63.27 1.13.43 1.51.55.63.2 1.21.17 1.66.1.51-.08 1.6-.65 1.83-1.29.22-.63.22-1.18.16-1.29-.07-.11-.25-.18-.52-.31zM16.01 3.2c-7.06 0-12.78 5.72-12.78 12.78 0 2.24.58 4.42 1.69 6.34L3 29l6.88-1.8c1.84 1 3.92 1.52 6.05 1.52h.01c7.06 0 12.79-5.72 12.79-12.78S23.07 3.2 16.01 3.2zm0 23.38h-.01c-1.9 0-3.76-.51-5.38-1.49l-.39-.23-4.08 1.07 1.09-3.97-.25-.41a10.55 10.55 0 01-1.62-5.63c0-5.83 4.75-10.58 10.59-10.58 2.82 0 5.47 1.1 7.46 3.1 1.99 1.99 3.09 4.64 3.09 7.46-.01 5.83-4.76 10.58-10.59 10.58z"/></svg>
+        Join Group
+      </a>
+      <button type="button" class="whatsapp-secondary-btn" id="whatsappStickyLater">Keep Reading</button>
+    </div>
+  </aside>
+
+  <div class="whatsapp-modal" id="whatsappExitModal" aria-hidden="true">
+    <div class="whatsapp-modal-card" role="dialog" aria-modal="true" aria-labelledby="whatsappExitTitle">
+      <button type="button" class="whatsapp-modal-close" id="whatsappModalClose" aria-label="Close WhatsApp popup">×</button>
+      <span class="whatsapp-modal-label">Before You Go</span>
+      <h3 id="whatsappExitTitle">Join The WhatsApp Group First</h3>
+      <p>This is the fastest way to receive the Zoom link, reminder alerts, and any important updates before Session 1. If you leave now without joining, you may miss a critical message.</p>
+      <div class="whatsapp-modal-list">
+        <span>Get reminders before each live session.</span>
+        <span>Receive any Zoom link or schedule updates instantly.</span>
+        <span>Get quick support if you face payment or access issues.</span>
+      </div>
+      <div class="whatsapp-actions" style="justify-content:flex-start;">
+        <a href="https://chat.whatsapp.com/EyvP8mc3DQe8yJOox8qNlN?mode=gi_t" class="whatsapp-btn js-whatsapp-join" target="_blank" rel="noopener noreferrer" data-source="modal">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.27-.13-1.6-.79-1.85-.88-.25-.09-.43-.13-.61.13-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.29-.79-.71-1.33-1.58-1.48-1.85-.16-.27-.02-.41.11-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26s.97 2.63 1.11 2.81c.13.18 1.88 2.86 4.54 4.02.63.27 1.13.43 1.51.55.63.2 1.21.17 1.66.1.51-.08 1.6-.65 1.83-1.29.22-.63.22-1.18.16-1.29-.07-.11-.25-.18-.52-.31zM16.01 3.2c-7.06 0-12.78 5.72-12.78 12.78 0 2.24.58 4.42 1.69 6.34L3 29l6.88-1.8c1.84 1 3.92 1.52 6.05 1.52h.01c7.06 0 12.79-5.72 12.79-12.78S23.07 3.2 16.01 3.2zm0 23.38h-.01c-1.9 0-3.76-.51-5.38-1.49l-.39-.23-4.08 1.07 1.09-3.97-.25-.41a10.55 10.55 0 01-1.62-5.63c0-5.83 4.75-10.58 10.59-10.58 2.82 0 5.47 1.1 7.46 3.1 1.99 1.99 3.09 4.64 3.09 7.46-.01 5.83-4.76 10.58-10.59 10.58z"/></svg>
+          Join WhatsApp Group
+        </a>
+        <button type="button" class="whatsapp-secondary-btn" id="whatsappModalDismiss">Maybe Later</button>
+      </div>
+      <div class="whatsapp-modal-note">This reminder appears only once if you have not clicked the WhatsApp join button yet.</div>
+    </div>
+  </div>
 
   <!-- ====== FOOTER ====== -->
   <footer class="footer">
@@ -969,8 +1309,8 @@
         </div>
         <div class="footer-col">
           <h4>Program</h4>
-          <p>Kautilya Arthashastra — 6-Day Webinar</p>
-          <p>March 19–29, 2026 &bull; 7:30–9:00 PM IST</p>
+          <p>Kautilya Arthashastra — 4-Day Webinar</p>
+          <p>April 4, 11, 18 &amp; 25, 2026 &bull; 6:00–8:00 PM IST</p>
           <p>Platform: Zoom (Live)</p>
         </div>
         <div class="footer-col">
@@ -982,6 +1322,7 @@
       </div>
       <div class="footer-bottom">
         &copy; 2026 Avinash Shukla. All rights reserved. &bull; Arthashastra Strategy Program
+        <br/>Created by <a href="https://www.dcoresystems.com" target="_blank" rel="noopener noreferrer" style="color:rgba(250,244,232,0.5);text-decoration:underline;">DCore Systems LLP</a>
       </div>
     </div>
   </footer>
@@ -1009,6 +1350,232 @@
       });
     }
     document.addEventListener('click', updateGroupProgress);
+
+    (function() {
+      var groupUrl = 'https://chat.whatsapp.com/EyvP8mc3DQe8yJOox8qNlN?mode=gi_t';
+      var joinedKey = 'ca-avinash-whatsapp-clicked';
+      var popupShownKey = 'ca-avinash-whatsapp-popup-shown';
+      var stickyDismissedKey = 'ca-avinash-whatsapp-sticky-dismissed';
+      var reminderArmed = false;
+      var focusBeforeModal = null;
+      var modal = document.getElementById('whatsappExitModal');
+      var modalClose = document.getElementById('whatsappModalClose');
+      var modalDismiss = document.getElementById('whatsappModalDismiss');
+      var sticky = document.getElementById('whatsappSticky');
+      var stickyDismiss = document.getElementById('whatsappStickyDismiss');
+      var stickyLater = document.getElementById('whatsappStickyLater');
+      var reminderButton = document.getElementById('whatsappReminderButton');
+      var status = document.getElementById('whatsappInlineStatus');
+      var joinLinks = Array.prototype.slice.call(document.querySelectorAll('.js-whatsapp-join'));
+
+      function hasJoined() {
+        return window.localStorage.getItem(joinedKey) === 'true';
+      }
+
+      function hasShownPopup() {
+        return window.sessionStorage.getItem(popupShownKey) === 'true';
+      }
+
+      function stickyDismissed() {
+        return window.sessionStorage.getItem(stickyDismissedKey) === 'true';
+      }
+
+      function setStatus(message, isSuccess) {
+        status.textContent = message || '';
+        status.classList.toggle('is-success', !!isSuccess);
+      }
+
+      function updateJoinState() {
+        var joined = hasJoined();
+        joinLinks.forEach(function(link) {
+          link.setAttribute('href', groupUrl);
+          if (joined) {
+            link.setAttribute('aria-label', 'Open WhatsApp group again');
+          }
+        });
+        if (joined) {
+          setStatus('WhatsApp group opened. If you have not joined yet inside WhatsApp, complete it there now.', true);
+          sticky.classList.remove('is-visible');
+        } else if (!stickyDismissed()) {
+          sticky.classList.add('is-visible');
+        }
+      }
+
+      function openModal() {
+        if (hasJoined() || hasShownPopup()) {
+          return;
+        }
+        focusBeforeModal = document.activeElement;
+        window.sessionStorage.setItem(popupShownKey, 'true');
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        window.setTimeout(function() {
+          var primaryButton = modal.querySelector('.js-whatsapp-join');
+          if (primaryButton) {
+            primaryButton.focus();
+          }
+        }, 50);
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (focusBeforeModal && typeof focusBeforeModal.focus === 'function') {
+          focusBeforeModal.focus();
+        }
+      }
+
+      function armReminder() {
+        reminderArmed = true;
+        setStatus('Reminder armed. If you try to leave without joining, we will prompt you once.', false);
+      }
+
+      function handleJoinClick(event) {
+        var source = event.currentTarget.getAttribute('data-source') || 'unknown';
+        window.localStorage.setItem(joinedKey, 'true');
+        window.sessionStorage.setItem(stickyDismissedKey, 'true');
+        setStatus('Opening WhatsApp group from ' + source + '. Complete the join inside WhatsApp.', true);
+        sticky.classList.remove('is-visible');
+        closeModal();
+      }
+
+      joinLinks.forEach(function(link) {
+        link.addEventListener('click', handleJoinClick);
+      });
+
+      reminderButton.addEventListener('click', armReminder);
+      stickyDismiss.addEventListener('click', function() {
+        window.sessionStorage.setItem(stickyDismissedKey, 'true');
+        sticky.classList.remove('is-visible');
+      });
+      stickyLater.addEventListener('click', function() {
+        armReminder();
+        sticky.classList.remove('is-visible');
+      });
+      modalClose.addEventListener('click', closeModal);
+      modalDismiss.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('mouseleave', function(event) {
+        if (!reminderArmed || hasJoined() || hasShownPopup()) {
+          return;
+        }
+        if (event.clientY <= 12) {
+          openModal();
+        }
+      });
+
+      window.setTimeout(function() {
+        if (!hasJoined() && !stickyDismissed()) {
+          sticky.classList.add('is-visible');
+        }
+      }, 1500);
+
+      window.setTimeout(function() {
+        if (!hasJoined() && !hasShownPopup()) {
+          reminderArmed = true;
+        }
+      }, 6000);
+
+      updateJoinState();
+    })();
+  </script>
+
+  <script>
+    (function () {
+      function isKnownWidgetError(message, source, stack) {
+        var msg = String(message || '');
+        var src = String(source || '');
+        var st = String(stack || '');
+        return msg.indexOf("Cannot read properties of undefined (reading 'replace')") !== -1 &&
+          (src.indexOf('embed-widget.umd.js') !== -1 || st.indexOf('embed-widget.umd.js') !== -1);
+      }
+
+      window.addEventListener('error', function (event) {
+        if (isKnownWidgetError(event.message, event.filename, event.error && event.error.stack)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function (event) {
+        var reason = event.reason;
+        var message = reason && (reason.message || String(reason));
+        var stack = reason && reason.stack;
+        if (isKnownWidgetError(message, '', stack)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+    })();
+  </script>
+  <script
+    src="https://myappzchat.com/production/master/widget/embed-widget.umd.js"
+    data-widget-id="88e58745-1b0e-42fe-af30-c421ab7acedf"
+    async
+  ></script>
+  <script>
+    (function () {
+      var defaultThemeColor = '#7A1818';
+
+      function isHexColor(input) {
+        if (typeof input !== 'string') return false;
+        return /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(input.trim());
+      }
+
+      function sanitizeThemeConfig(value) {
+        if (!value || typeof value !== 'object') return false;
+        var changed = false;
+        Object.keys(value).forEach(function (key) {
+          var child = value[key];
+          if (String(key).toLowerCase().indexOf('color') !== -1 && !isHexColor(child)) {
+            value[key] = defaultThemeColor;
+            changed = true;
+            return;
+          }
+          if (child && typeof child === 'object') {
+            if (sanitizeThemeConfig(child)) changed = true;
+          }
+        });
+        return changed;
+      }
+
+      if (window.fetch && !window.__chatWidgetFetchPatched) {
+        var originalFetch = window.fetch.bind(window);
+        window.fetch = function (requestInfo, requestInit) {
+          var requestUrl = String((typeof requestInfo === 'string' ? requestInfo : (requestInfo && requestInfo.url)) || '');
+          return originalFetch(requestInfo, requestInit).then(function (response) {
+            try {
+              if (!requestUrl.includes('myappzchat.com')) return response;
+              var contentType = response.headers && response.headers.get('content-type');
+              if (!contentType || !contentType.toLowerCase().includes('application/json')) return response;
+              return response.clone().json().then(function (data) {
+                if (!sanitizeThemeConfig(data)) return response;
+                return new Response(JSON.stringify(data), {
+                  status: response.status,
+                  statusText: response.statusText,
+                  headers: new Headers(response.headers)
+                });
+              }).catch(function () { return response; });
+            } catch (e) { return response; }
+          });
+        };
+        window.__chatWidgetFetchPatched = true;
+      }
+    })();
   </script>
 
 </body>
